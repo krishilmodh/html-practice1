@@ -6,6 +6,9 @@ Playwright is a powerful, open-source solution for automating web interactions a
 - Easy to use
 - Catches bugs early
 
+## node install
+sudo apt install nodejs
+
 ## Commands
 
 To run the test generator:
