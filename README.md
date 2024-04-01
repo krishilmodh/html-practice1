@@ -125,6 +125,7 @@ test("test", async ({ page }) => {
   expect(await page.locator("text=deep").count()).toBe(1);
 });
 ```
+### counter - [link](https://github.com/krishilmodh/html-practice1/blob/main/counter.html)
 ## Demo 3
 Hooks
 ```bash
