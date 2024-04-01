@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <script src="main.js"></script>
+    <my-element></my-element> -->
+    <my-element2>
+      <template shadowrootmode="open">
+        <slot></slot>
+      </template>
+      <h2>Declarative shadow dom</h2>
+    </my-element2>
+    <my-counter>
+      <template shadowrootmode="open">
+        <style>
+          #increment {
+            background-color: #4caf50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+          }
+        </style>
+        <div>Count: <span id="count">0</span></div>
+        <button id="increment">Increment</button>
+      </template>
+    </my-counter>
+
+    <script>
+      class MyCounter extends HTMLElement {
+        constructor() {
+          super();
+          this.count = 0;
+          const root = this.shadowRoot;
+          const countSpan = root.getElementById("count");
+          const incrementButton = root.getElementById("increment");
+          incrementButton.addEventListener("click", () => {
+            this.count++;
+            countSpan.textContent = this.count;
+          });
+        }
+      }
+
+      customElements.define("my-counter", MyCounter);
+    </script>
+  </body>
+</html>
